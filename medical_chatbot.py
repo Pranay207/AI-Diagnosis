@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Initialize OpenAI client with your key
-client = OpenAI(api_key="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")  # Replace with your actual key
+client = OpenAI(api_key="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")  # Replace with your actual key
 
 # Streamlit page settings
 st.set_page_config(page_title="Medical Chatbot", page_icon="💊")
