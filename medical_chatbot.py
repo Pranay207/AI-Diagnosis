@@ -32,11 +32,14 @@ if user_input:
     # Get assistant response
     with st.chat_message("assistant"):
         with st.spinner("Thinking... 🤔"):
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=st.session_state.messages
-            )
-            reply = response.choices[0].message.content
+            client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])  # or hardcoded
+
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=st.session_state.messages
+)
+reply = response.choices[0].message.content
+
             st.markdown(reply)
 
     # Add assistant reply to history
