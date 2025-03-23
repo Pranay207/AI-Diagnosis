@@ -9,7 +9,7 @@ st.set_page_config(page_title="Medical Chatbot", page_icon="💊")
 st.title("💊 AI Medical Chatbot")
 st.markdown(
     "Ask health-related questions and get helpful insights powered by AI.\n\n"
-    "> ⚠️ This is not a substitute for professional medical advice."
+    "> "
 )
 
 # Setup chat history
