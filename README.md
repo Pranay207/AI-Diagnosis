@@ -40,3 +40,12 @@ Built using **Streamlit**, **OpenAI GPT**, and trained ML models for conditions 
 
 ## 📁 Project Structure
 
+
+---
+
+Let me know if you want:
+- A **matching `requirements.txt`** file  
+- Sample **screenshots or banner** image  
+- Separate `README` files for each module (chatbot, predictors)  
+
+Happy to help you polish this even more!
