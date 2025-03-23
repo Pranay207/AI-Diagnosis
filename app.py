@@ -4,7 +4,7 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-st.set_page_config(page_title='Prediction of Disease Outbreaks', layout='wide', page_icon='🩺')
+st.set_page_config(page_title='AI-Powered Medical Diagnosis System', layout='wide', page_icon='🩺')
 
 # Load models
 diabetes_model = pickle.load (open("Models/final_diabetes_model.sav", 'rb'))
@@ -12,7 +12,7 @@ heartdisease_model = pickle.load (open("Models/final_heart_model.sav", 'rb'))
 parkinsonsdisease_model = pickle.load (open("Models/final_parkinsons_model.sav", 'rb'))
 
 # Centered Page Title
-st.markdown("""<h1 style= 'text-align: center;'>Prediction of Disease Outbreak System (using ML) </h1>""", unsafe_allow_html=True)
+st.markdown("""<h1 style= 'text-align: center;'>AI-Powered Medical Diagnosis System </h1>""", unsafe_allow_html=True)
 
 # Horizontal Navigation Bar
 selected = st.radio("", ["Diabetes Prediction", "Heart Disease Prediction", "Parkinson’s Disease Prediction"], horizontal=True)
