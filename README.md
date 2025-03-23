@@ -1,37 +1,42 @@
 # AI-Diagnosis
-# 💊 Medical Chatbot
+# 🧠 AI-Powered Medical Diagnosis System
 
-A conversational medical assistant built using **Streamlit** and **OpenAI GPT**. This chatbot helps users ask questions about medical symptoms, health concerns, and general wellness — all in a clean chat interface.
+An intelligent, web-based application that leverages **machine learning** and **natural language processing (NLP)** to provide medical diagnosis support. This system allows users to:
 
-⚠️ **Disclaimer:** This chatbot is for **informational purposes only** and not a substitute for professional medical advice, diagnosis, or treatment.
+- 🩺 Predict common diseases based on clinical input parameters
+- 💬 Chat with an AI-powered medical assistant (chatbot) for general health-related queries
+
+Built using **Streamlit**, **OpenAI GPT**, and trained ML models for conditions like **Diabetes**, **Heart Disease**, and **Parkinson’s Disease**.
+
+> ⚠️ **Disclaimer**: This system is intended for educational and informational purposes only. It does **not replace professional medical advice, diagnosis, or treatment**.
 
 ---
 
 ## 🚀 Features
 
-- Chat-based interface using `st.chat_input()` and `st.chat_message()`
-- Built with `streamlit` and `openai`
-- Remembers chat history during the session
-- Lightweight, fast, and easy to deploy
+- 🎯 Disease Prediction:
+  - Diabetes
+  - Heart Disease
+  - Parkinson’s Disease
+- 💬 Conversational AI (Medical Chatbot)
+- 🌐 Modern, responsive Streamlit UI
+- 🧠 Uses pre-trained ML models and OpenAI GPT-3.5
+- 🛡️ Secure API key integration for OpenAI
 
 ---
 
-## 🧠 Powered By
+## 🛠️ Tech Stack
 
-- [Streamlit](https://streamlit.io/)
-- [OpenAI GPT-3.5 Turbo](https://platform.openai.com/docs/guides/gpt)
+| Tool/Library     | Purpose                                |
+|------------------|----------------------------------------|
+| `Python 3.8+`     | Core programming language              |
+| `Streamlit`       | Web application framework              |
+| `scikit-learn`    | Machine learning models                |
+| `pandas`, `numpy` | Data processing                        |
+| `OpenAI API`      | Chatbot with GPT-3.5 Turbo             |
+| `joblib`          | Model serialization                    |
 
 ---
 
-## 🖼️ Preview
+## 📁 Project Structure
 
-![Medical Chatbot Demo](preview.png) <!-- Replace with your screenshot file -->
-
----
-
-## 🛠️ Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/medical-chatbot.git
-   cd medical-chatbot
