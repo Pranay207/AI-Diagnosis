@@ -1,44 +1,31 @@
 import streamlit as st
-from openai import OpenAI
 
-# Initialize OpenAI client with your key
-client = OpenAI(api_key="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")  # Replace with your actual key
+st.set_page_config(page_title="Simple Medical Bot", page_icon="🩺")
+st.title("🩺 Simple Medical Chatbot")
+st.markdown("Ask common questions about symptoms or health tips.")
 
-# Streamlit page settings
-st.set_page_config(page_title="Medical Chatbot", page_icon="💊")
-st.title("💊 AI Medical Chatbot")
-st.markdown(
-    "Ask health-related questions and get helpful insights powered by AI.\n\n"
-    "> "
-)
+def respond(user_input):
+    user_input = user_input.lower()
+    if "fever" in user_input:
+        return "You may be experiencing an infection. Drink fluids and monitor temperature."
+    elif "headache" in user_input:
+        return "Try to rest in a dark room. If persistent, consult a doctor."
+    elif "cough" in user_input:
+        return "A dry cough could be due to cold or allergies. Stay hydrated."
+    else:
+        return "I'm not sure about that. Please consult a doctor for professional advice."
 
-# Setup chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "system", "content": "You are a helpful medical assistant."}]
+# Chat UI
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
 
-# Display previous messages
-for msg in st.session_state.messages[1:]:  # Skip system prompt
-    with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
-
-# User input
-user_input = st.chat_input("Type your medical question here...")
+user_input = st.chat_input("Describe your symptoms...")
 
 if user_input:
-    st.session_state.messages.append({"role": "user", "content": user_input})
-    with st.chat_message("user"):
-        st.markdown(user_input)
+    response = respond(user_input)
+    st.session_state.chat_history.append(("You", user_input))
+    st.session_state.chat_history.append(("Bot", response))
 
-    # Get response
-    with st.chat_message("assistant"):
-        with st.spinner("Thinking... 💭"):
-            try:
-                response = client.chat.completions.create(
-                    model="gpt-3.5-turbo",
-                    messages=st.session_state.messages,
-                )
-                reply = response.choices[0].message.content
-                st.markdown(reply)
-                st.session_state.messages.append({"role": "assistant", "content": reply})
-            except Exception as e:
-                st.error(f"An error occurred: {e}")
+for speaker, message in st.session_state.chat_history:
+    with st.chat_message(speaker.lower()):
+        st.markdown(message)
