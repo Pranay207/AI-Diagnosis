@@ -1,45 +1,44 @@
 import streamlit as st
-import openai
+from openai import OpenAI
 
-# 🔐 Use your OpenAI API key directly (for now)
-client = openai.OpenAI(api_key="sk-...your-api-key-here...")
+# Initialize OpenAI client with your key
+client = OpenAI(api_key="sk-...your-api-key-here...")  # Replace with your actual key
 
-# 🎨 Page setup
+# Streamlit page settings
 st.set_page_config(page_title="Medical Chatbot", page_icon="💊")
-st.title("💊 Medical Chatbot")
+st.title("💊 AI Medical Chatbot")
 st.markdown(
-    "Ask anything about your health symptoms or medical concerns. 🩺\n\n"
-    "> ⚠️ This is for informational purposes only and not a substitute for professional medical advice."
+    "Ask health-related questions and get helpful insights powered by AI.\n\n"
+    "> ⚠️ This is not a substitute for professional medical advice."
 )
 
-# 🧠 Initialize chat history
+# Setup chat history
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = [{"role": "system", "content": "You are a helpful medical assistant."}]
 
-# 💬 Show previous messages
-for msg in st.session_state.messages:
+# Display previous messages
+for msg in st.session_state.messages[1:]:  # Skip system prompt
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# 📥 User input
+# User input
 user_input = st.chat_input("Type your medical question here...")
 
 if user_input:
-    # Add user message to history
     st.session_state.messages.append({"role": "user", "content": user_input})
-
     with st.chat_message("user"):
         st.markdown(user_input)
 
-    # 💡 Get assistant response
+    # Get response
     with st.chat_message("assistant"):
-        with st.spinner("Thinking... 🤔"):
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=st.session_state.messages
-            )
-            reply = response.choices[0].message.content
-            st.markdown(reply)
-
-    # Add assistant reply to history
-    st.session_state.messages.append({"role": "assistant", "content": reply})
+        with st.spinner("Thinking... 💭"):
+            try:
+                response = client.chat.completions.create(
+                    model="gpt-3.5-turbo",
+                    messages=st.session_state.messages,
+                )
+                reply = response.choices[0].message.content
+                st.markdown(reply)
+                st.session_state.messages.append({"role": "assistant", "content": reply})
+            except Exception as e:
+                st.error(f"An error occurred: {e}")
