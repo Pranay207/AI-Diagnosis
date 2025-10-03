@@ -1,53 +1,54 @@
 # AI-Diagnosis
-🧠 AI-Powered Medical Diagnosis System
+# 🧠 AI-Powered Medical Diagnosis System  
 
-An intelligent, web-based application that leverages Machine Learning (ML) and Natural Language Processing (NLP) to provide medical diagnosis support.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue?logo=python" />
+  <img src="https://img.shields.io/badge/Streamlit-Web%20App-ff4b4b?logo=streamlit" />
+  <img src="https://img.shields.io/badge/OpenAI-GPT--3.5-412991?logo=openai" />
+  <img src="https://img.shields.io/badge/License-MIT-green" />
+</p>  
 
-This system allows users to:
+<p align="center">
+   An intelligent, web-based application that leverages <b>Machine Learning (ML)</b> and  
+   <b>Natural Language Processing (NLP)</b> to predict diseases and provide an AI-powered chatbot.  
+</p>  
 
-🩺 Predict common diseases based on clinical input parameters
+---
 
-💬 Chat with an AI-powered medical assistant for general health-related queries
+## ✨ Overview  
 
-Built using Streamlit, OpenAI GPT, and pre-trained ML models for conditions like Diabetes, Heart Disease, and Parkinson’s Disease.
+This project integrates **ML-based disease prediction** with a **medical chatbot** powered by **OpenAI GPT-3.5**.  
+It predicts **Diabetes, Heart Disease, and Parkinson’s Disease**, while allowing users to chat with an **AI assistant** for health-related queries.  
 
-⚠️ Disclaimer: This system is intended for educational and informational purposes only. It does not replace professional medical advice, diagnosis, or treatment.
+⚠️ *Disclaimer: This project is intended for **educational purposes only** and should not be considered medical advice.*  
 
-🚀 Features
+---
 
-🎯 Disease Prediction
+## 🚀 Features  
 
-Diabetes
+- 🎯 **Disease Prediction**  
+  - Diabetes  
+  - Heart Disease  
+  - Parkinson’s Disease  
+- 💬 **AI Medical Chatbot** (GPT-3.5)  
+- 🌐 **Responsive Streamlit UI**  
+- 🧠 **Pre-trained ML Models**  
+- 🔐 **Secure API key integration**  
 
-Heart Disease
+---
 
-Parkinson’s Disease
+## 🛠️ Tech Stack  
 
-💬 Conversational AI (Medical Chatbot)
+| Technology       | Purpose                           |
+|------------------|-----------------------------------|
+| 🐍 **Python 3.8+** | Core programming language        |
+| 🎨 **Streamlit**  | Web app framework                |
+| 🤖 **scikit-learn** | Machine Learning models         |
+| 📊 **pandas, numpy** | Data processing & analysis    |
+| 🧠 **OpenAI API** | Conversational AI (GPT-3.5 Turbo) |
+| 💾 **joblib**     | Model serialization              |
 
-🌐 Modern, Responsive Streamlit UI
+---
 
-🧠 AI-Powered – Uses pre-trained ML models + OpenAI GPT-3.5
-
-🛡️ Secure API key integration for OpenAI
-
-🛠️ Tech Stack
-Tool / Library	Purpose
-Python 3.8+	Core programming language
-Streamlit	Web application framework
-scikit-learn	Machine learning models
-pandas, numpy	Data processing & analysis
-OpenAI API	Conversational AI (GPT-3.5 Turbo)
-joblib	Model serialization & deployment
-📁 Project Structure
-AI-Medical-Diagnosis/
-│
-├── models/              # Pre-trained ML models  
-├── pages/               # Streamlit multipage setup  
-├── chatbot/             # Medical chatbot module  
-├── data/                # Datasets (if included)  
-├── app.py               # Main Streamlit app entry point  
-├── requirements.txt     # Project dependencies  
-└── README.md            # Project documentation  
-!
+## 📂 Project Structure  
 
