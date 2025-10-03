@@ -52,3 +52,13 @@ It predicts **Diabetes, Heart Disease, and Parkinson’s Disease**, while allowi
 
 ## 📂 Project Structure  
 
+AI-Medical-Diagnosis/
+│── app.py # Main Streamlit app
+│── models/ # Pre-trained ML models
+│── chatbot/ # Chatbot module
+│── pages/ # Streamlit multipage setup
+│── data/ # Datasets (if included)
+│── requirements.txt # Dependencies
+└── README.md # Documentation
+
+
